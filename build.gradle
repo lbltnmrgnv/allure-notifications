@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "com.github.johnrengelman.shadow" version "7.1.1"
 }
 
 group 'allure.notifications'
@@ -12,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    compile(
+    implementation(
             'org.slf4j:slf4j-log4j12:1.7.30',
             'com.sun.mail:javax.mail:1.6.2',
             'com.konghq:unirest-java:3.11.11',
@@ -31,11 +32,17 @@ tasks.withType(JavaCompile) {
 
 jar {
     manifest {
-        attributes(
-                'Main-Class': 'guru.qa.allure.notifications.Application'
-        )
+        attributes 'Main-Class': 'guru.qa.allure.notifications.Application'
     }
     from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+shadowJar {
+    archiveBaseName.set('allure-test')
+    archiveVersion.set('1.0.0')
+    manifest {
+        attributes 'Main-Class': 'guru.qa.allure.notifications.Application'
     }
 }

@@ -51,4 +51,40 @@ public class Build {
                 .orElseThrow(() ->
                         new ArgumentNotProvidedException("comm"));
     }
+
+    /**
+     * <p>Получает значение по ключу <code>project</code></p>
+     * @return значение, если имеется
+     * @throws ArgumentNotProvidedException если параметр не указан или null
+     */
+    public static String project() {
+        return Optional
+                .ofNullable(BuildConfig.config.getString("project"))
+                .orElseThrow(() ->
+                        new ArgumentNotProvidedException("project"));
+    }
+
+    /**
+     * <p>Получает значение по ключу <code>version</code></p>
+     * @return значение, если имеется
+     * @throws ArgumentNotProvidedException если параметр не указан или null
+     */
+    public static String version() {
+        return Optional
+                .ofNullable(BuildConfig.config.getString("version"))
+                .orElseThrow(() ->
+                        new ArgumentNotProvidedException("version"));
+    }
+
+    /**
+     * <p>Получает значение по ключу <code>testsType</code></p>
+     * @return значение, если имеется
+     * @throws ArgumentNotProvidedException если параметр не указан или null
+     */
+    public static String testsType() {
+        return Optional
+                .ofNullable(BuildConfig.config.getString("testsType"))
+                .orElseThrow(() ->
+                        new ArgumentNotProvidedException("testsType"));
+    }
 }

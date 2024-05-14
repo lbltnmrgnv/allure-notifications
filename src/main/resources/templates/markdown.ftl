@@ -1,7 +1,10 @@
 <#compress>
-*${results}:*
+    *${results}:*
     *${environment}:* ${env}
     *${comment}:* ${comm}
+    *${Project}:* ${project}
+    *${Version}:* *${version}*
+    *${type}:* ${testsType}
     *${duration}:* ${time}
     *${totalScenarios}:* ${total}
     <#if passed != 0 > *${totalPassed}:* ${passed} </#if>

@@ -33,6 +33,9 @@ public class MessageData {
         LOG.info("Applying language phrases...");
         phrases.put("results", LANG.getPhrase("results"));
         phrases.put("environment", LANG.getPhrase("environment"));
+        phrases.put("Project", LANG.getPhrase("Project"));
+        phrases.put("Version", LANG.getPhrase("Version"));
+        phrases.put("type", LANG.getPhrase("type"));
         phrases.put("comment", LANG.getPhrase("comment"));
         phrases.put("duration", LANG.getPhrase("duration"));
         phrases.put("totalScenarios", LANG.getPhrase("totalScenarios"));
@@ -71,6 +74,9 @@ public class MessageData {
         final Map<String, Object> buildInfo = new HashMap<>();
         LOG.info("Applying build data...");
         buildInfo.put("env", Build.env());
+        buildInfo.put("project", Build.project());
+        buildInfo.put("version", Build.version());
+        buildInfo.put("testsType", Build.testsType());
         buildInfo.put("comm", Build.comment());
         buildInfo.put("reportLink", Build.reportLink());
         LOG.info("Done.");

@@ -1,6 +1,9 @@
 <#compress>
-<b>${results}:</b>
+    <b>${results}:</b>
     <b>${environment}:</b> ${env}
+    <b>${Project}:</b> ${project}
+    <b>${Version}:</b> <b>${version}</b>
+    <b>${type}:</b> ${testsType}
     <b>${comment}:</b> ${comm}
     <b>${duration}:</b> ${time}
     <b>${totalScenarios}:</b> ${total}

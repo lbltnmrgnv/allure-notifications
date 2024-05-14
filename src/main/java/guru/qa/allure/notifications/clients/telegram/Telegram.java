@@ -18,7 +18,7 @@ public class Telegram implements Notifier {
                 .header("Content-Type", Headers.URL_ENCODED.header())
                 .field("chat_id", Bot.chat())
                 .field("reply_to_message_id", Bot.replyTo() + "")
-                .field("text", MessageText.html())
+                .field("text", MessageText.markdown())
                 .field("parse_mode", "HTML")
                 .asString()
                 .getBody();

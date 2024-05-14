@@ -2,6 +2,9 @@
   "phrases": {
     "results": "Results",
     "environment": "Environment",
+    "Version": "Version",
+    "Project": "Project",
+    "type": "Tests type",
     "comment": "Comment",
     "duration": "Duration",
     "totalScenarios": "Total scenarios",

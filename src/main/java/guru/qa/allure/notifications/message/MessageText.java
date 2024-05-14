@@ -40,7 +40,7 @@ public class MessageText {
             template.process(MessageData.values(), writer);
             LOG.info("Done.");
         } catch (Exception ex) {
-            LOG.error("Invalid template data!");
+            LOG.error("Invalid template data!", ex);
             System.exit(1);
         }
         return writer.toString();
